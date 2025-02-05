@@ -47,3 +47,7 @@ function removeLast(){
   input.textContent = input.textContent.slice(0, input.textContent.length - 1)
 }
 
+// removes all content of input
+function removeAll(){
+  input.textContent = ""
+}
