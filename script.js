@@ -42,3 +42,8 @@ function lastIsOperator(){
   return false;
 }
 
+// removes last symbol of input
+function removeLast(){
+  input.textContent = input.textContent.slice(0, input.textContent.length - 1)
+}
+
