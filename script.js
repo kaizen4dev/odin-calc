@@ -64,6 +64,37 @@ function divide(divident, ...args){
 
 function answer(string){
   let expression = string || input.textContent
+
+  // handle brackets
+  while(expression.includes("(")){
+    // handle not closed brackets
+    if(!expression.includes(")")) return null;
+
+    // find beginning and end of brackets
+    let open = Number(expression.indexOf("("))
+    let close = Number(expression.indexOf(")"))
+
+    // chop expression to parts
+    let mid = expression.slice(open + 1, close);
+
+    // handle brackets inside brackets...
+    while(mid.includes("(")){
+      // adding 1 beacuse mid is new string, which begins counting from
+      // zero again, but we need index of original string
+      open = open + Number(mid.indexOf("(") + 1); 
+      mid = expression.slice(open + 1, close);
+    }
+
+    let start = expression.slice(0, open)
+    let end = expression.slice(close + 1)
+
+    console.log(start);
+    console.log(mid);
+    console.log(end);
+    // update expression
+    expression = start + answer(mid) + end
+  }
+
   let nums = expression.split(/\D/).map(num => Number(num));
   let operators = expression.split(/\d/).filter(item => item != "");
 
