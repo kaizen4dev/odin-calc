@@ -29,3 +29,9 @@ function operate(operator, numOne, numTwo){
       return divide(numOne, numTwo);
   }
 }
+
+// adds provided text to input
+function appendInput(text){
+  input.textContent = input.textContent ? input.textContent + text : text;
+}
+
