@@ -1,15 +1,15 @@
 function add(...args){
-  return args.reduce((sum, num) => sum += num, 0);
+  return args.length >= 2 ? args.reduce((sum, num) => sum += num, 0) : null;
 }
 
 function subtract(minuend, ...args){
-  return args.reduce((diff, num) => diff -= num, minuend);
+  return minuend ? args.reduce((diff, num) => diff -= num, minuend) : null;
 }
 
 function mustiply(...args){
-  return args.reduce((product, num) => product *= num, 1);
+  return args.length >= 2 ? args.reduce((product, num) => product *= num, 1) : null;
 }
 
 function divide(divident, ...args){
-  return args.reduce((quotient, num) => quotient /= num, divident);
+  return args ? args.reduce((quotient, num) => quotient /= num, divident) : null;
 }
