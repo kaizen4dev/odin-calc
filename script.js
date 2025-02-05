@@ -6,7 +6,7 @@ function subtract(minuend, ...args){
   return minuend ? args.reduce((diff, num) => diff -= num, minuend) : null;
 }
 
-function mustiply(...args){
+function multiply(...args){
   return args.length >= 2 ? args.reduce((product, num) => product *= num, 1) : null;
 }
 
