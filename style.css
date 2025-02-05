@@ -41,6 +41,7 @@ hr{
 
 .display-area .input {
   font-size: 30px;
+  text-align: end;
 }
 
 .buttons{
