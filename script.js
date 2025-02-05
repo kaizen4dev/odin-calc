@@ -24,6 +24,13 @@ function main(){
       return;
     }
 
+    // if clear used remove all symbols and return
+    if(classes.includes("clear")){
+      removeAll()
+      return;
+    }
+
+
     if(classes.includes("equals")){
       // call function to show result(doesn't exist yet)
       return;
