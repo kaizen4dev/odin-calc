@@ -1,6 +1,43 @@
 // global variables
 const input = document.querySelector(".display-area .input")
 
+// main function
+function main(){
+  // listen for clicks
+  addEventListener('mousedown', (event) => {
+    console.dir(event.target)
+
+    // select target of our event, it's classes and text content
+    const target = event.target;
+    const classes = target.className;
+    const text = target.textContent;
+
+    // return early if target isn't button
+    if(target.localName != "button") return;
+
+    // remove default text
+    input.textContent = input.textContent ==  "Your input" ? "" : input.textContent;
+
+    // if backspace used remove last digit and return
+    if(classes.includes("backspace")){
+      removeLast()
+      return;
+    }
+
+    if(classes.includes("equals")){
+      // call function to show result(doesn't exist yet)
+      return;
+    }
+
+    // if user wants to use operator, but last symbol is already an operator - remove it.
+    if(classes.includes("operator") && lastIsOperator()){
+      removeLast()
+    }
+
+    appendInput(text)    
+  })
+}
+
 function add(...args){
   return args.length >= 2 ? args.reduce((sum, num) => sum += num, 0) : null;
 }
@@ -51,3 +88,5 @@ function removeLast(){
 function removeAll(){
   input.textContent = ""
 }
+
+main();
