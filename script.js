@@ -13,3 +13,16 @@ function multiply(...args){
 function divide(divident, ...args){
   return args ? args.reduce((quotient, num) => quotient /= num, divident) : null;
 }
+
+function operate(operator, numOne, numTwo){
+  switch(operator){
+    case "+":
+      return add(numOne, numTwo);
+    case "-":
+      return subtract(numOne, numTwo);
+    case "×":
+      return multiply(numOne, numTwo);
+    case "÷":
+      return divide(numOne, numTwo);
+  }
+}
