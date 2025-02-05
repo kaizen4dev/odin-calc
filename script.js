@@ -35,3 +35,10 @@ function appendInput(text){
   input.textContent = input.textContent ? input.textContent + text : text;
 }
 
+// check if last symbol of input is an operator
+function lastIsOperator(){
+  const last = input.textContent[input.textContent.length -1]
+  if(last == "+" || last == "-" || last == "×" || last == "÷") return true;
+  return false;
+}
+
