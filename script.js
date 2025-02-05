@@ -1,3 +1,6 @@
+// global variables
+const input = document.querySelector(".display-area .input")
+
 function add(...args){
   return args.length >= 2 ? args.reduce((sum, num) => sum += num, 0) : null;
 }
