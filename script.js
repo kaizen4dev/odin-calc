@@ -173,6 +173,10 @@ function lastIsOperator(){
   return isOperator(last);
 }
 
+function getLast(){
+  return input.textContent[input.textContent.length -1];
+}
+
 // removes last symbol of input
 function removeLast(){
   input.textContent = input.textContent.slice(0, input.textContent.length - 1);
