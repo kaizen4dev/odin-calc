@@ -22,7 +22,7 @@ function main(){
     // backspace
     if(classes.includes("backspace")){
       // remove last symbol
-      removeLast()
+      removeLast();
       // on long press remove full expression
       longPress = setTimeout(() => removeAll(), 250);
       return;
