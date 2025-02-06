@@ -1,5 +1,5 @@
 // global variables
-const input = document.querySelector(".display-area .input")
+const input = document.querySelector(".display-area .input");
 let longPress;
 
 // main function
