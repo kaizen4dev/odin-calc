@@ -175,6 +175,10 @@ function operate(operator, numOne, numTwo){
   }
 }
 
+function isOperator(item){
+  return item == "+" || item == "-" || item == "×" || item == "÷";
+}
+
 // adds provided text to input
 function appendInput(text){
   input.textContent = input.textContent ? input.textContent + text : text;
