@@ -137,7 +137,7 @@ function answer(string){
 
 
   // Addition / subtraction
-  nums = [...newNums]
+  nums = newNums.slice();
   newOpers.forEach(operator => {
     let value = operate(operator, nums[0], nums[1]);
     nums.splice(0, 2, value);
