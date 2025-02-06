@@ -42,8 +42,11 @@ hr{
 }
 
 .display-area .input {
+  width: 100%;
   font-size: 30px;
   text-align: end;
+  word-wrap: break-word;
+  overflow: auto;
 }
 
 .buttons{
