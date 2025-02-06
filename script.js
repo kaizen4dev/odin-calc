@@ -24,7 +24,7 @@ function main(){
       // remove last symbol
       removeLast()
       // on long press remove full expression
-      longPress = setTimeout(() => removeAll(), 250)
+      longPress = setTimeout(() => removeAll(), 250);
       return;
     }
 
@@ -36,21 +36,21 @@ function main(){
 
     // if user wants to use operator, but last symbol is already an operator - remove it.
     if(classes.includes("operator") && lastIsOperator()){
-      removeLast()
+      removeLast();
     }
 
-    appendInput(text)    
+    appendInput(text);
   })
 
   addEventListener('mouseup', () => {
     // cancel execution of code that was intended for long press
     // (if it wasn't executed already)
-    clearTimeout(longPress)
+    clearTimeout(longPress);
   })
 }
 
 function answer(string){
-  let expression = string || input.textContent
+  let expression = string || input.textContent;
 
   // handle brackets
   while(expression.includes("(")){
@@ -58,8 +58,8 @@ function answer(string){
     if(!expression.includes(")")) return null;
 
     // find beginning and end of brackets
-    let open = Number(expression.indexOf("("))
-    let close = Number(expression.indexOf(")"))
+    let open = Number(expression.indexOf("("));
+    let close = Number(expression.indexOf(")"));
 
     // chop expression to parts
     let mid = expression.slice(open + 1, close);
@@ -72,14 +72,14 @@ function answer(string){
       mid = expression.slice(open + 1, close);
     }
 
-    let start = expression.slice(0, open)
-    let end = expression.slice(close + 1)
+    let start = expression.slice(0, open);
+    let end = expression.slice(close + 1);
 
     console.log(start);
     console.log(mid);
     console.log(end);
     // update expression
-    expression = start + answer(mid) + end
+    expression = start + answer(mid) + end;
   }
 
   let nums = expression.split(/\D/).map(num => Number(num));
@@ -178,12 +178,12 @@ function lastIsOperator(){
 
 // removes last symbol of input
 function removeLast(){
-  input.textContent = input.textContent.slice(0, input.textContent.length - 1)
+  input.textContent = input.textContent.slice(0, input.textContent.length - 1);
 }
 
 // removes all content of input
 function removeAll(){
-  input.textContent = ""
+  input.textContent = "";
 }
 
 main();
