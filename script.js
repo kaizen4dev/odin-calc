@@ -175,8 +175,7 @@ function appendInput(text){
 
 // check if last symbol of input is an operator
 function lastIsOperator(){
-  const last = input.textContent[input.textContent.length -1];
-  return isOperator(last);
+  return getLast() == " ";
 }
 
 function getLast(){
