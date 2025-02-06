@@ -18,6 +18,7 @@ function main(){
 
     // remove default text
     input.textContent = input.textContent ==  "Your input" ? "" : input.textContent;
+    input.textContent = input.textContent ==  "NaN" ? "" : input.textContent;
 
     // backspace
     if(classes.includes("backspace")){
