@@ -21,6 +21,12 @@ function main(){
 
     // backspace
     if(classes.includes("backspace")){
+      // operators are warapped in spaces, therefore we need 
+      // to delete 3 times if we want to delete operator
+      if(getLast() == " "){
+        removeLast();
+        removeLast();
+      }
       // remove last symbol
       removeLast();
       // on long press remove full expression
