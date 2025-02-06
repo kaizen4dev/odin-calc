@@ -75,9 +75,6 @@ function answer(string){
     let start = expression.slice(0, open);
     let end = expression.slice(close + 1);
 
-    console.log(start);
-    console.log(mid);
-    console.log(end);
     // update expression
     expression = start + answer(mid) + end;
   }
