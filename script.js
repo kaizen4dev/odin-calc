@@ -50,6 +50,7 @@ function main(){
   })
 }
 
+// evaluate string. Requires for operators to be wrapped in spaces!
 function answer(string){
   let expression = string || input.textContent;
 
