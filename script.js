@@ -40,6 +40,11 @@ function main(){
       return;
     }
 
+    if(classes.includes("negative")) {
+      switchNegative();
+      return;
+    }
+
     appendInput(text);
   })
 
@@ -186,6 +191,40 @@ function removeLast(){
 // removes all content of input
 function removeAll(){
   input.textContent = "";
+}
+
+// switches negative/positive for last number
+function switchNegative(){
+  // return if input is empty or last symbol is operator
+  if(input.textContent == "" || lastIsOperator()) return;
+
+  // find index of symbol after space/operator
+  index = Number(input.textContent.lastIndexOf(" ")) + 1;
+  // if next item is brackets shift index till we find number
+  while(input.textContent[index] == "(") index++;
+
+
+  // if first number
+  if(!index){
+    input.textContent = input.textContent[0] == "-" ? input.textContent.slice(1) : "-" + input.textContent
+    return;
+  }
+
+  // any other number
+  
+  // turn off
+  if(input.textContent[index] == "-"){
+    let start = input.textContent.slice(0, index);
+    let end = input.textContent.slice(index + 1);
+    input.textContent = start + end;
+    return;
+  }
+
+  // turn on
+  let start = input.textContent.slice(0, index);
+  let end = input.textContent.slice(index);
+
+  input.textContent = start + "-" + end;
 }
 
 main();
