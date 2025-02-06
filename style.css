@@ -29,11 +29,13 @@ hr{
   background-color: #eee;
   width: 400px;
   height: 700px;
+  box-sizing: content-box;
+  border: #143D60 solid 20px;
 }
 
 .display-area {
   height: 200px;
-  background-color: #f4f4f4;
+  background-color: #A0C878;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -69,3 +71,14 @@ hr{
   flex-direction: column;
 }
 
+
+/* add some colors! */
+.number, .dot, .negative {
+  background-color: #4DA1A9;
+}
+.operator {
+  background-color: #79D7BE;
+}
+.left .top button {
+  background-color: #DDEB9D;
+}
