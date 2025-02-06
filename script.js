@@ -82,9 +82,9 @@ function answer(string){
     expression = start + answer(mid) + end;
   }
 
-  let nums = expression.split(/\D/).map(num => Number(num));
-  let operators = expression.split(/\d/).filter(item => item != "");
-
+  let newExpr = expression.split(" ")
+  let nums = newExpr.filter(item => !isOperator(item))
+  let operators = newExpr.filter(item => isOperator(item))
 
   // frist we do multiplication/division...
 
