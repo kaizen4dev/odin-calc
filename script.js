@@ -1,5 +1,6 @@
 // global variables
 const input = document.querySelector(".display-area .input")
+let longPress;
 
 // main function
 function main(){
@@ -18,18 +19,14 @@ function main(){
     // remove default text
     input.textContent = input.textContent ==  "Your input" ? "" : input.textContent;
 
-    // if backspace used remove last digit and return
+    // backspace
     if(classes.includes("backspace")){
+      // remove last symbol
       removeLast()
+      // on long press remove full expression
+      longPress = setTimeout(() => removeAll(), 250)
       return;
     }
-
-    // if clear used remove all symbols and return
-    if(classes.includes("clear")){
-      removeAll()
-      return;
-    }
-
 
     if(classes.includes("equals")){
       // call function to show result(doesn't exist yet)
@@ -43,6 +40,12 @@ function main(){
     }
 
     appendInput(text)    
+  })
+
+  addEventListener('mouseup', () => {
+    // cancel execution of code that was intended for long press
+    // (if it wasn't executed already)
+    clearTimeout(longPress)
   })
 }
 
