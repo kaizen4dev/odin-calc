@@ -49,22 +49,6 @@ function main(){
   })
 }
 
-function add(...args){
-  return args.length >= 2 ? args.reduce((sum, num) => sum += num, 0) : null;
-}
-
-function subtract(minuend, ...args){
-  return minuend ? args.reduce((diff, num) => diff -= num, minuend) : null;
-}
-
-function multiply(...args){
-  return args.length >= 2 ? args.reduce((product, num) => product *= num, 1) : null;
-}
-
-function divide(divident, ...args){
-  return args ? args.reduce((quotient, num) => quotient /= num, divident) : null;
-}
-
 function answer(string){
   let expression = string || input.textContent
 
@@ -163,15 +147,17 @@ function answer(string){
 }
 
 function operate(operator, numOne, numTwo){
+  numOne = Number(numOne);
+  numTwo = Number(numTwo);
   switch(operator){
     case "+":
-      return add(numOne, numTwo);
+      return numOne + numTwo;
     case "-":
-      return subtract(numOne, numTwo);
+      return numOne - numTwo;
     case "×":
-      return multiply(numOne, numTwo);
+      return numOne * numTwo;
     case "÷":
-      return divide(numOne, numTwo);
+      return numOne / numTwo;
   }
 }
 
