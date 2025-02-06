@@ -186,9 +186,8 @@ function appendInput(text){
 
 // check if last symbol of input is an operator
 function lastIsOperator(){
-  const last = input.textContent[input.textContent.length -1]
-  if(last == "+" || last == "-" || last == "×" || last == "÷") return true;
-  return false;
+  const last = input.textContent[input.textContent.length -1];
+  return isOperator(last);
 }
 
 // removes last symbol of input
