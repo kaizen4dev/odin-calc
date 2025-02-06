@@ -40,11 +40,6 @@ function main(){
       return;
     }
 
-    // if user wants to use operator, but last symbol is already an operator - remove it.
-    if(classes.includes("operator") && lastIsOperator()){
-      removeLast();
-    }
-
     appendInput(text);
   })
 
